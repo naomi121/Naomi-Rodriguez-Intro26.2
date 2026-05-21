@@ -43,9 +43,9 @@ messageForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
   
-    const nameValue = event.target.userName.value;
-    const emailValue = event.target.userEmail.value;
-    const messageValue = event.target.userMessage.value;
+    const nameValue = event.target.usersName.value;
+    const emailValue = event.target.usersEmail.value;
+    const messageValue = event.target.usersMessage.value;
 
     
     console.log('Form Submitted:', { nameValue, emailValue, messageValue });
