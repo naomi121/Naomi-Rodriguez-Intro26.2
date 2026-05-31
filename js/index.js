@@ -118,4 +118,31 @@ fetch('https://api.github.com/users/naomi121/repos')
   
   .catch(error => {
     console.error('Error fetching repositories:', error);
+
+   const projectSection = document.querySelector('#projects');
+
+  
+    const errorMessage = document.createElement('p');
+
+    
+    errorMessage.innerText = 'Sorry, there was trouble loading the projects right now. Please try again later!';
+    
+    
+    errorMessage.style.color = 'red';
+    errorMessage.style.textAlign = 'center';
+
+    
+    projectSection.appendChild(errorMessage);
+
+
+
+
+
+
+
+
+
+
+
+
   });
