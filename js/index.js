@@ -88,3 +88,61 @@ messageForm.addEventListener('submit', function(event) {
     
     messageForm.reset();
 });
+
+
+fetch('https://api.github.com/users/naomi121/repos')
+  .then(response => {
+    
+    return response.json(); 
+  })
+  .then(repositories => {
+   
+    console.log(repositories);
+
+   
+    const projectSection = document.querySelector('#projects');
+    const projectList = projectSection.querySelector('ul');
+
+   
+    for (let i = 0; i < repositories.length; i++) {
+      
+      const project = document.createElement('li');
+      
+      
+      project.innerText = repositories[i].name;
+      
+      
+      projectList.appendChild(project);
+    }
+  })
+  
+  .catch(error => {
+    console.error('Error fetching repositories:', error);
+
+   const projectSection = document.querySelector('#projects');
+
+  
+    const errorMessage = document.createElement('p');
+
+    
+    errorMessage.innerText = 'Sorry, there was trouble loading the projects right now. Please try again later!';
+    
+    
+    errorMessage.style.color = 'red';
+    errorMessage.style.textAlign = 'center';
+
+    
+    projectSection.appendChild(errorMessage);
+
+
+
+
+
+
+
+
+
+
+
+
+  });
